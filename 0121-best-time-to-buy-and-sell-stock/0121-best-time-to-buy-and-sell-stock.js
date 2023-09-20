@@ -9,12 +9,11 @@ var maxProfit = function(prices) {
     let maxProfit = 0;
 
     while (pointer2 <= prices.length - 1) {
-
         if (prices[pointer2] < prices[pointer1]) {
             pointer1 = pointer2;
             pointer2++;
         } else {
-            let profit = prices[pointer2] - prices[pointer1]
+            let profit = prices[pointer2] - prices[pointer1];
             maxProfit = Math.max(maxProfit, profit);
             pointer2++;
         }
