@@ -3,23 +3,24 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
-    let left = 0;
-    let right = 1;
+    let pointer1 = 0;
+    let pointer2 = 1;
 
     let maxProfit = 0;
 
-    while (right <= prices.length - 1) {
-        let price1 = prices[left];
-        let price2 = prices[right];
+    while (pointer2 < prices.length) {
+        let price1 = prices[pointer1];
+        let price2 = prices[pointer2];
 
         if (price2 < price1) {
-            left = right;
-            right++;
+            pointer1 = pointer2;
+            pointer2++;
         } else {
             maxProfit = Math.max(maxProfit, price2 - price1);
-            right++;
+            pointer2++
         }
     }
+
     return maxProfit;
 };
 
