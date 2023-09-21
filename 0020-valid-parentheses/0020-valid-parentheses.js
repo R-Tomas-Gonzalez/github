@@ -3,7 +3,6 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    if (s.length % 2 != 0) return false;
     let map = {
         ')': '(',
         ']': '[',
@@ -14,17 +13,13 @@ var isValid = function(s) {
 
     for (let i = 0; i < s.length; i++) {
         let char = s[i];
-
         if (!map[char]) {
             stack.push(char);
+        } else if (stack[stack.length - 1] === map[char]) {
+            stack.pop()
         } else {
-            if (stack.length && stack[stack.length - 1] === map[char]) {
-                stack.pop();
-            } else {
-                return false
-            }
+            return false;
         }
-
     }
 
     return stack.length ? false : true;
