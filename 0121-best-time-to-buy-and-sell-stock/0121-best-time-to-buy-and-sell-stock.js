@@ -6,22 +6,23 @@ var maxProfit = function(prices) {
     let pointer1 = 0;
     let pointer2 = 1;
 
-    let maxProfit = 0;
+    let max = 0;
 
     while (pointer2 < prices.length) {
-        let price1 = prices[pointer1];
+        let price1= prices[pointer1];
         let price2 = prices[pointer2];
 
         if (price2 < price1) {
             pointer1 = pointer2;
             pointer2++;
         } else {
-            maxProfit = Math.max(maxProfit, price2 - price1);
-            pointer2++
+            let diff = price2 - price1;
+            max = Math.max(max, diff);
+            pointer2++;
         }
     }
 
-    return maxProfit;
+    return max;
 };
 
 //we need to keep track of 1st index
