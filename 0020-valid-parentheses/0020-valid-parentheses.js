@@ -18,20 +18,28 @@ var isValid = function(s) {
 
         if (!map[char]) {
             stack.push(char);
-        } else if (stack[stack.length - 1] === map[char]) {
-            stack.pop();
-        } else if (stack[stack.length - 1] !== map[char]) {
+        } else if (map[char] === stack[stack.length - 1 ]) {
+            stack.pop()
+        } else if (map[char] !== stack[stack.length - 1]) {
             return false;
         }
     }
-    
-    console.log(stack)
+
+    console.log(stack);
 
     return stack.length ? false : true;
+
 };
 
 // if there is an odd number of brackets, return false; Because in order to have valid parenthesis we need to have even number parens
 // we want to create a map, to keep track of our parenthesis
+
+    // let map = {
+    //     ')':'(',
+    //     '}':'{',
+    //     ']':'['
+    // }
+
 // we want to keep a stack to keep track of our open parens
 
 // for loop, to iterate through the array
