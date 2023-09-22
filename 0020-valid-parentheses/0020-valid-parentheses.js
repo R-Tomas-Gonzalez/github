@@ -6,9 +6,9 @@ var isValid = function(s) {
     if (s.length % 2 !== 0) return false;
 
     let map = {
-        ')' : '(',
-        ']' : '[',
-        '}' : '{'
+        ')':'(',
+        '}':'{',
+        ']':'['
     }
 
     let stack = [];
@@ -24,8 +24,8 @@ var isValid = function(s) {
             return false;
         }
     }
-
-    console.log(stack);
+    
+    console.log(stack)
 
     return stack.length ? false : true;
 };
