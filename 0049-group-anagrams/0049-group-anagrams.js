@@ -15,11 +15,7 @@ var groupAnagrams = function(strs) {
             map[sortedWord].push(strs[i]);
         }
     }
-    let answerArr = [];
-    for (key in map) {
-        answerArr.push(map[key]);
-    }
 
-    return answerArr;
+    return Object.values(map);;
 };
 
