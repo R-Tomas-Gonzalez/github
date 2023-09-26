@@ -3,7 +3,7 @@
  * @return {string[][]}
  */
 var groupAnagrams = function(strs) {
-    if (strs.length === 1 || !strs) return [strs];
+    if (!strs || strs.length === 1) return [strs];
 
     let map = {};
 
@@ -11,14 +11,13 @@ var groupAnagrams = function(strs) {
         let sortedString = strs[i].split('').sort().join('');
 
         if (!map[sortedString]) {
-            map[sortedString] = [strs[i]]
+            map[sortedString] = [strs[i]];
         } else {
-            map[sortedString].push(strs[i])
+            map[sortedString].push(strs[i]);
         }
     }
 
     return Object.values(map);
-    
 };
 
 
