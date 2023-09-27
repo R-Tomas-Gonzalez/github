@@ -3,7 +3,6 @@
  * @return {number}
  */
 var maxArea = function(height) {
-
     let pointer1 = 0;
     let pointer2 = height.length - 1;
 
@@ -11,12 +10,10 @@ var maxArea = function(height) {
 
     while (pointer1 < pointer2) {
         let length = pointer2 - pointer1;
-
         let maxHeight = Math.min(height[pointer1], height[pointer2]);
+        let area = maxHeight * length;
 
-        let area = length * maxHeight;
-
-        maxContainer = Math.max(maxContainer, area);
+        maxContainer = Math.max(area, maxContainer);
 
         if (height[pointer1] < height[pointer2]) {
             pointer1++;
@@ -26,7 +23,6 @@ var maxArea = function(height) {
     }
 
     return maxContainer;
-    
 };
 
 
