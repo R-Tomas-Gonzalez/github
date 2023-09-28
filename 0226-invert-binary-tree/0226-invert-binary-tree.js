@@ -11,7 +11,7 @@
  * @return {TreeNode}
  */
 var invertTree = function (root) {
-    if (!root) return root;
+    if (!root) return null;
 
     let mem = root.right;
     root.right = root.left;
@@ -22,3 +22,26 @@ var invertTree = function (root) {
 
     return root;
 };
+
+// binary trees are kind of like linked lists but they have a left and right pointer;
+// keep a mem of either left or right;
+// switch the left and right pointers;
+// recurse through the root until we've hit null;
+
+//         4
+//        / \
+//       2   7
+//      /\   /\
+//     1  3 6  9
+
+//         4
+//        / \
+//       7   2
+//      /\   /\
+//     6  9 1  3
+
+//         4
+//        / \
+//       7   2
+//      /\   /\
+//     9  6 3  1
