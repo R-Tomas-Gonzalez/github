@@ -2,23 +2,20 @@
  * @param {number} n
  * @return {number}
  */
-var fib = function(n) {
-    if (n === 0) return 0;
+var fib = function(n, prevValues = []) {
+    if (prevValues[n]) {
+        return prevValues[n];
+    }
 
-    if (n === 1) return 1;
+    let result;
+    if (n == 0) {
+        result = 0;
+    } else if (n <= 2) {
+        result = 1;
+    } else {
+        result = fib(n - 1, prevValues) + fib(n - 2, prevValues);
+    }
 
-    return (fib(n - 1) + fib(n - 2));
+    prevValues[n] = result;
+    return result
 };
-
-//fib(6) = 8
-//(5) + (4) 
-//fib(5) = 5
-// 3  + 2 
-//(4) + (3)
-//fib(4) = 3
-//(3) + (2)
-//fib(3) = 2
-//(2) + (1)
-//fib(2) = 1
-//(1) + (0)
-
