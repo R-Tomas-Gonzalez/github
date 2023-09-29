@@ -23,7 +23,6 @@ var climbStairs = function(n) {
 // [1, 1, 2, 3, 5, 8]
 
 
-
 // 2 stairs = 2
 // 1 + 1
 // 2
