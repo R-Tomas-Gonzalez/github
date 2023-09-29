@@ -10,8 +10,10 @@ var fib = function(n) {
 
     for (let i = 2; i <= n; i++) {
         dpArr[i] = dpArr[i - 1] + dpArr[i - 2];
+        dpArr[0] = dpArr[i - 1];
+        dpArr[1] = dpArr[i];
     }
-    
+
     return dpArr[dpArr.length - 1];
 };
 
