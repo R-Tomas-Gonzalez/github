@@ -5,15 +5,15 @@
 var climbStairs = function(n) {
     if (n <= 3) return n;
 
-    let dpArray = [2, 3];
+    let dpArr = [2, 3];
 
     for (let i = 4; i <= n; i++) {
-        let sum = dpArray[0] + dpArray[1];
-        dpArray[0] = dpArray[1];
-        dpArray[1] = sum
+        let sum = dpArr[0] + dpArr[1];
+        dpArr[0] = dpArr[1];
+        dpArr[1] = sum;
     }
 
-    return dpArray[1];
+    return dpArr[1];
 };
 
 // subproblems
@@ -21,6 +21,8 @@ var climbStairs = function(n) {
 // essentially this comes down to a dp problem.
 // because it's a fib problem
 // [1, 1, 2, 3, 5, 8]
+
+
 
 // 2 stairs = 2
 // 1 + 1
