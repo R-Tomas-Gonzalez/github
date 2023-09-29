@@ -9,10 +9,11 @@ var fib = function(n) {
     let dpArr = [0, 1];
 
     for (let i = 2; i <= n; i++) {
-        dpArr[i] = dpArr[i - 1] + dpArr[i - 2];
-        dpArr[0] = dpArr[i - 1];
-        dpArr[1] = dpArr[i];
+        let sum = dpArr[1] + dpArr[0];
+        dpArr[0] = dpArr[1];
+        dpArr[1] = sum;
     }
+
 
     return dpArr[dpArr.length - 1];
 };
