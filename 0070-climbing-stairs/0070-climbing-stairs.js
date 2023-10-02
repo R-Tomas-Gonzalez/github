@@ -5,16 +5,17 @@
 var climbStairs = function(n) {
     if (n <= 3) return n;
 
-    let var1 = 2;
-    let var2 = 3;
-    
+    let num1 = 2;
+    let num2 = 3;
+
     for (let i = 4; i <= n; i++) {
-        let temp = var1 + var2;
-        var1 = var2;
-        var2 = temp;
+        let temp = num1 + num2;
+        num1 = num2;
+        num2 = temp;
     }
 
-    return var2
+    return num2;
+
 };
 
 // subproblems
