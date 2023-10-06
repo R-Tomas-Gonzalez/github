@@ -5,23 +5,18 @@
 var productExceptSelf = function(nums) {
     let answerArr = [];
 
+    let prefix = 1;
+
     for (let i = 0; i < nums.length; i++) {
+        answerArr[i] = prefix
+        prefix *= nums[i] 
+    }
 
-        let leftPointer = i - 1;
-        let rightPointer = i + 1;
+    let suffix = 1;
 
-        let sum = 1;
-
-        while (leftPointer >= 0) {
-            sum = sum * nums[leftPointer]
-            leftPointer--;
-        }
-
-        while (rightPointer < nums.length) {
-            sum = sum * nums[rightPointer]
-            rightPointer++;
-        }
-        answerArr.push(sum);
+    for(let i = nums.length - 1; i >= 0; i--) {
+        answerArr[i] *= suffix
+        suffix *= nums[i];
     }
 
     return answerArr;
