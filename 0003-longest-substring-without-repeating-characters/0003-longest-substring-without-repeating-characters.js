@@ -28,14 +28,15 @@ var lengthOfLongestSubstring = function(s) {
 
 /*
 example
-p1
-p2
- v v
-abcabc
+count = 0, 1, 2, 3, 3, 3
+p1    v
+   abcabc
+p2       v
+   abcabc
 let map = {
-    'a' = 'a'
-    'c' = 'c'
-    'b' = 'b'
+    'a' = 'a',
+    'b' = 'b',
+
 };
 
 two pointer system
