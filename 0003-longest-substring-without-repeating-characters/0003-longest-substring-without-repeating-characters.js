@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function(s) {
 
     let map = {};
     let count = 0;
-    
+
     while (pointer2 < s.length) {
         let letter1 = s[pointer1];
         let letter2 = s[pointer2];
@@ -23,24 +23,27 @@ var lengthOfLongestSubstring = function(s) {
         }
     }
 
-
     return count;
 };
 
 /*
-//example
+example
+p1
+p2
+ v v
+abcabc
 let map = {
-    'c' = 'c',
-    'a' = 'a',
+    'a' = 'a'
+    'c' = 'c'
     'b' = 'b'
-
 };
 
-//create a map
-//checks if letter is in map
-//initializes key and value to letter
-//increment pointer2 to keep going
-//check the max vs the distance
-//get rid of pointer1 in map
-//increment pointer1 until we get to a new non duplicate index
+two pointer system
+create a map
+checks if letter is in map
+initializes key and value to letter
+increment pointer2 to keep going
+check the max vs the distance
+get rid of pointer1 in map
+increment pointer1 until we get to a new non duplicate index
 */
